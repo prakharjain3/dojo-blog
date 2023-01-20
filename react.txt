@@ -1,0 +1,14 @@
+cannot output an object
+
+-----------------------------------------------------------------------------------
+
+const person = {name : 'yoshi', age : 30};
+
+<p>{ person }</p>
+
+will throw an error
+
+numbers, arrays and strings are fine
+converts array into an strings
+
+-----------------------------------------------------------------------------------
