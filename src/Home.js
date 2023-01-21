@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([
@@ -11,17 +12,13 @@ const Home = () => {
       id: 3,
     },
   ]);
+  const title = "All Blogs";
+  const secondtitle = "Mario's Blogs";
 
   return (
     <div className="home">
-      {blogs.map((blog) => (
-        <div className="blog-preview" key={blog.id}>
-          {" "}
-          {/* id must be unique for each item */}
-          <h2>{blog.title} </h2>
-          <p>Writtern by : {blog.author}</p>
-        </div>
-      ))}
+      <BlogList blogs={blogs} title={title} />
+      <BlogList blogs={blogs.filter((blog) => blog.author === "mario")} title={secondtitle} />
     </div>
   );
 };
