@@ -20,7 +20,7 @@
 
 // export default BlogList;
 
-const BlogList = ({blogs, title}) => {
+const BlogList = ({blogs, title, handleDelete}) => {
     // const blogs = props.blogs;
     // const title = props.title;
   
@@ -34,6 +34,7 @@ const BlogList = ({blogs, title}) => {
             {/* id must be unique for each item */}
             <h2>{blog.title} </h2>
             <p>Writtern by : {blog.author}</p>
+            <button onClick={() => {handleDelete(blog.id)}}>delete blog</button>
           </div>
         ))}
       </div>
