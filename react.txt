@@ -14,3 +14,7 @@ converts array into an strings
 -----------------------------------------------------------------------------------
 
 npx json-server --watch data/db.json --port 8000
+
+-----------------------------------------------------------------------------------
+
+Replace all the Switch with Routes

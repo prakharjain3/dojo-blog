@@ -1,6 +1,8 @@
 import Navbar from "./Navbar";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
+import Create from "./Create";
+import React from "react";
 
 function App() {
   return (
@@ -8,11 +10,10 @@ function App() {
       <div className="App">
         <Navbar />
         <div className="content">
-          <Switch>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<Home/>} />
+            <Route path="/create" element={<Create/>} />
+          </Routes>
         </div>
       </div>
     </Router>
