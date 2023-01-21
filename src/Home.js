@@ -1,27 +1,29 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const Home = () => {
+  const [blogs, setBlogs] = useState([
+    { title: "My new website", body: "lorem ipsum...", author: "mario", id: 1 },
+    { title: "Welcome party!", body: "lorem ipsum...", author: "yoshi", id: 2 },
+    {
+      title: "Web dev top tips",
+      body: "lorem ipsum...",
+      author: "mario",
+      id: 3,
+    },
+  ]);
 
-    // let name = "mario";
-    const [name, setName] = useState("mario"); // triggers to re render the webpage with luigi
-    const [age, setAge] = useState(25)                               // it could be an object an array or a boolean or it could be a boolean
-    const handleClick = () => { // arrow function
-        setName("luigi");
-        setAge(60);
-    }
+  return (
+    <div className="home">
+      {blogs.map((blog) => (
+        <div className="blog-preview" key={blog.id}>
+          {" "}
+          {/* id must be unique for each item */}
+          <h2>{blog.title} </h2>
+          <p>Writtern by : {blog.author}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-    // const handleClickAgain = (name, e) => {
-    //     console.log("hello " + name, e.target);
-    // }
-
-    return ( 
-        <div className="home">
-            <h2>Homepage</h2>
-            <p>{ name } is { age } years old</p>
-            <button onClick={handleClick}>Click me</button>
-            {/* <button onClick={(e) => handleClickAgain("mario", e)}>Click me again</button> */}
-            </div>
-     );
-}
- 
 export default Home;
