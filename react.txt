@@ -12,3 +12,5 @@ numbers, arrays and strings are fine
 converts array into an strings
 
 -----------------------------------------------------------------------------------
+
+npx json-server --watch data/db.json --port 8000
